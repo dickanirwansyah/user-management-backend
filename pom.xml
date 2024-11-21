@@ -147,5 +147,6 @@
 				</executions>
 			</plugin>
 		</plugins>
+		<finalName>backend-service</finalName>
 	</build>
 </project>
