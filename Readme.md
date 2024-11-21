@@ -16,3 +16,9 @@ GRANT ALL PRIVILEGES ON db_backend_service.* TO 'root'@'muhamads-air.lan';
 FLUSH PRIVILEGES;
 
 SELECT user, host FROM mysql.user WHERE user = 'root';
+
+# Integrated with argocd
+1. kubectl create namespace argocd
+2. kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+3. kubectl port-forward svc/argocd-server -n argocd 8080:443
+4. kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath="{.data.password}" | base64 -d && echo

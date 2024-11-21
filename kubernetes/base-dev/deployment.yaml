@@ -22,5 +22,13 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            failureThreshold: 3
+
 
 
