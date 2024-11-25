@@ -3,16 +3,3 @@ bases:
   - ../../base-prod
 resources:
   - namespace-prod.yaml
-patches:
-  - target:
-      kind: ConfigMap
-      namespace: backend-service-config
-    patch: |
-      - op: replace
-        path: /data/application.yml
-        value: |
-          spring:
-            rabbitmq:
-              host: 192.168.5.91
-            datasource:
-              url: jdbc:mysql://192.168.5.91:3306/db_backend_service?allowPublicKeyRetrieval=true&useSSL=false
