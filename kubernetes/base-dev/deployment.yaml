@@ -22,13 +22,5 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: dev
-          readinessProbe:
-            httpGet:
-              path: /backend-service/actuator/health
-              port: 9090
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            failureThreshold: 3
-
 
 
